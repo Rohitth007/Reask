@@ -1,0 +1,25 @@
+{% extends "base.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} LogIn {% endblock %}
+
+{% block page_content %}
+
+  <div class="page-header">
+    <h1> LogIn </h1>
+  </div>
+
+  <div class="col-md-6">
+
+    {{ wtf.quick_form(form) }}
+    <br>
+    <p>
+      New user?
+      <a href="{{ url_for('auth.signup') }}">
+        Click here to register.
+      </a>
+    </p>
+
+  </div>
+
+{% endblock %}

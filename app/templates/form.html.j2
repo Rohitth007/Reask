@@ -1,0 +1,36 @@
+<!-- Method 1 -->
+<!-- anything put inside a form element like name() will act as a html attribute -->
+<!-- <form method="POST">
+  {{ form.name.label }}
+  <br>
+  <br>
+  {{ form.name(placeholder='Name', id='textbox')}}
+  <br>
+  <br>
+  {{ form.submit() }}
+</form> -->
+
+<!-- Method 2: using bootstrap -->
+{% extends "base.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} TestForm {% endblock %}
+
+{% block page_content %}
+
+  <!-- Header -->
+  <div class='page-header'>
+    <h1>
+      Hello,
+      {% if current_user.is_authenticated %}
+        {{ current_user.username }}
+      {% else %}
+        Stranger
+      {% endif %}!
+    </h1>
+  </div>
+
+  <!-- Render Form using bootstrap -->
+  {{ wtf.quick_form(form) }}
+
+{% endblock %}
