@@ -1,5 +1,5 @@
-# Flasky
-Twitter-like microblogging platform
+# Reask
+Medium-like blogging platform
 
 ## How to Use
 1. `source venv/bin/activate`
